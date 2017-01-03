@@ -4,8 +4,8 @@ import org.junit.Test;
 
 public class IsUniqueValidator_1_1_Tests
 {
-    private String uniqueString = "abc";
-    private String nonUnqiueString = "abcsdaf";
+    final private String uniqueString = "abc";
+    final private String nonUnqiueString = "abcsdaf";
 
     @Test
     public void isUniqueWithDataStructure_GivenUniqueString_ReturnsTrue()

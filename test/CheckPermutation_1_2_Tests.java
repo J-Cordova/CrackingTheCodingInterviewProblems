@@ -5,11 +5,11 @@ import org.junit.Test;
 
 public class CheckPermutation_1_2_Tests
 {
-    private String perm1 = "abc";
-    private String perm2 = "cab";
+    final private String perm1 = "abc";
+    final private String perm2 = "cab";
 
-    private  String nonPerm1 = "xyz";
-    private String nonPerm2 = "abc";
+    final private  String nonPerm1 = "xyz";
+    final private String nonPerm2 = "abc";
 
     @Test
     public void isPermutation_GivenPermutationStrings_ReturnsTrue()
