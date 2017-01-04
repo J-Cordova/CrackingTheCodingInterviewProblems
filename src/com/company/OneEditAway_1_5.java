@@ -8,18 +8,21 @@ public class OneEditAway_1_5
     {
         if (Math.abs(a.length() - b.length()) > 1) return false;
 
-        HashSet<Character> aChars = new HashSet();
+        String longerString = a.length() > b.length() ? a : b;
+        String shorterString = a.length() > b.length() ? b : a;
 
-        for(char c: a.toCharArray())
+        HashSet<Character> shortChars = new HashSet<Character>();
+
+        for(char c: shorterString.toCharArray())
         {
-            aChars.add(c);
+            shortChars.add(c);
         }
 
         int diffCount = 0;
 
-        for(char character : b.toCharArray())
+        for(char character : longerString.toCharArray())
         {
-            if (!aChars.contains(character))
+            if (!shortChars.contains(character))
             {
                 diffCount++;
                 if (diffCount > 1)

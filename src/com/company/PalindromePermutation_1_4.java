@@ -1,9 +1,5 @@
 package com.company;
 
-
-import java.util.HashMap;
-import java.util.Hashtable;
-
 public class PalindromePermutation_1_4
 {
     public boolean CheckIfPermutationOfPalindrome(String str)
