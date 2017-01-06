@@ -2,8 +2,6 @@ import com.company.RotateMatrix_1_7;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-
 public class RotateMatrix_1_7_Tests
 {
     final private int[][] baseMatrix = new int[][]{
@@ -31,17 +29,27 @@ public class RotateMatrix_1_7_Tests
     };
 
     @Test
-    public void GivenRotatableMatrix_RotateMatrix_MatchesRotatedMatrix()
+    public void Given2x2RotatableMatrix_RotateMatrix_MatchesRotatedMatrix()
     {
         RotateMatrix_1_7 rotator = new RotateMatrix_1_7();
 
-        int[][] result1 = rotator.RotateMatrix(baseMatrix);
-        int[][] result2 = rotator.RotateMatrix(baseMatrix2);
+        int[][] rotated = rotator.RotateMatrix(baseMatrix);
 
-        boolean firstResult = compareArrays(result1,rotatedMatrix);
-        boolean secondResult = compareArrays(result2,rotatedMatrix2);
+        boolean result = compareArrays(rotated,rotatedMatrix);
 
-        Assert.assertTrue(firstResult && secondResult);
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void Given3x3RotatableMatrix_RotateMatrix_MatchesRotatedMatrix()
+    {
+        RotateMatrix_1_7 rotator = new RotateMatrix_1_7();
+
+        int[][] rotated = rotator.RotateMatrix(baseMatrix2);
+
+        boolean result = compareArrays(rotated,rotatedMatrix2);
+
+        Assert.assertTrue(result);
     }
 
     private boolean compareArrays(int[][] arr1, int [][] arr2)
