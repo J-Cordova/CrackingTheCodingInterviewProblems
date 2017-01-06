@@ -1,71 +1,65 @@
+import com.company.RotateMatrix_1_7;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.Arrays;
+
 public class RotateMatrix_1_7_Tests
 {
-    public int[][] RotateMatrix(int[][] matrix)
+    final private int[][] baseMatrix = new int[][]{
+            new int[] { 1, 2},
+            new int[] { 4, 3},
+    };
+
+
+    final private int[][] rotatedMatrix = new int[][]{
+            new int[] { 4, 1},
+            new int[] { 3, 2},
+    };
+
+    final private int[][] baseMatrix2 = new int[][]{
+            new int[] { 1, 2, 3},
+            new int[] { 8, 9, 4},
+            new int[] { 7, 6, 5},
+    };
+
+
+    final private int[][] rotatedMatrix2 = new int[][]{
+            new int[] { 7, 8, 1},
+            new int[] { 6, 9, 2},
+            new int[] { 5, 4, 3},
+    };
+
+    @Test
+    public void GivenRotatableMatrix_RotateMatrix_MatchesRotatedMatrix()
     {
-        int layerCount = matrix[0].length - 1;
+        RotateMatrix_1_7 rotator = new RotateMatrix_1_7();
 
-        int walkDistance = 0;
-        int layer = 0;
+        int[][] result1 = rotator.RotateMatrix(baseMatrix);
+        int[][] result2 = rotator.RotateMatrix(baseMatrix2);
 
-        //foreach layer
-        for (int i = 0; i < layerCount; i++)
-        {
-            walkDistance = layerCount - i;
+        boolean firstResult = compareArrays(result1,rotatedMatrix);
+        boolean secondResult = compareArrays(result2,rotatedMatrix2);
 
-
-        }
-
-        return matrix;
+        Assert.assertTrue(firstResult && secondResult);
     }
 
-
-    boolean rotate(int[][] matrix)
+    private boolean compareArrays(int[][] arr1, int [][] arr2)
     {
-        if (matrix.length == 0 || matrix.length != matrix[0].length)return false;
-        int n = matrix.length;
-        for (int layer = 0; layer < n / 2; layer++) {
-            int first = layer;
-            int last = n - 1 - layer;
-            for (int i = first; i < last; i++) {
-                int offset = i - first;
-                int top = matrix[first][i]; // save top
-                // left -> top
-                matrix[first][i] = matrix[last - offset][first];
-                // bottom -> left
-                matrix[last - offset][first] = matrix[last][last - offset];
-                // right -> bottom
-                matrix[last][last - offset] = matrix[i][last];
-                // top -> right
-                matrix[i][last] = top; // right <- saved top
+        int height = arr1.length;
+        int width = arr1[0].length;
 
+        for (int i = 0; i < height; i++)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                if(arr1[i][j] != arr2[i][j])
+                {
+                    return false;
+                }
             }
         }
-        return true;
-    }
-    //may be redundant all transitions happen in every turn
-    // so we have 4 states in code anyway
-    public Direction transitionDirection(Direction direction)
-    {
-        switch (direction)
-        {
-            case up:
-                return Direction.right;
-            case down:
-                return Direction.left;
-            case left:
-                return Direction.up;
-            case right:
-                return Direction.down;
-            default:
-                return Direction.right;
-        }
-    }
 
-    enum Direction
-    {
-        up,
-        down,
-        left,
-        right
+        return true;
     }
 }
