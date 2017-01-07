@@ -1,4 +1,6 @@
-import com.company.StringCompression_1_6;
+package Chapter1_Tests;
+
+import com.company.Chapter1.StringCompression_1_6;
 import org.junit.Assert;
 import org.junit.Test;
 

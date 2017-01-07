@@ -1,4 +1,6 @@
-import com.company.OneEditAway_1_5;
+package Chapter1_Tests;
+
+import com.company.Chapter1.OneEditAway_1_5;
 import org.junit.Assert;
 import org.junit.Test;
 

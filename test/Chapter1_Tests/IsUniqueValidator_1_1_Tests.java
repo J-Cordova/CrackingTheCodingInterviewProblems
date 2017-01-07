@@ -1,4 +1,6 @@
-import com.company.IsUniqueValidator_1_1;
+package Chapter1_Tests;
+
+import com.company.Chapter1.IsUniqueValidator_1_1;
 import org.junit.Assert;
 import org.junit.Test;
 

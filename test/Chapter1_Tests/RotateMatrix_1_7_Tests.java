@@ -1,4 +1,6 @@
-import com.company.RotateMatrix_1_7;
+package Chapter1_Tests;
+
+import com.company.Chapter1.RotateMatrix_1_7;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,4 +1,6 @@
-import com.company.PalindromePermutation_1_4;
+package Chapter1_Tests;
+
+import com.company.Chapter1.PalindromePermutation_1_4;
 import org.junit.Assert;
 import org.junit.Test;
 

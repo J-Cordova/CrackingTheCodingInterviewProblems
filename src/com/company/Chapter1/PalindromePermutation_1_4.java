@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Chapter1;
 
 public class PalindromePermutation_1_4
 {

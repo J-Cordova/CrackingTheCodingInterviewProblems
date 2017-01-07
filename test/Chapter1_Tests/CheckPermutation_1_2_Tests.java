@@ -1,4 +1,6 @@
-import com.company.CheckPermutation_1_2;
+package Chapter1_Tests;
+
+import com.company.Chapter1.CheckPermutation_1_2;
 import org.junit.Assert;
 import org.junit.Test;
 
