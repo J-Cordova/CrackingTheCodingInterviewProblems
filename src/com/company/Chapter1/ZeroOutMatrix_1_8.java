@@ -37,7 +37,7 @@ public class ZeroOutMatrix_1_8
         return matrix;
     }
 
-    public int[][]zeroOutWithContantSpace(int[][] matrix)
+    public int[][] zeroOutWithConstantSpace(int[][] matrix)
     {
         boolean firstRowZero = false;
         boolean firstColZero = false;
