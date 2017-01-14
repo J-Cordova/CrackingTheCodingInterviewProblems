@@ -15,4 +15,15 @@ public class TestListGenerator
         return node;
     }
 
+
+    public static Node<Integer> getIntegerTestLinkedList()
+    {
+        Node<Integer> node = new Node<>(5);
+
+        node.setNext(new Node<Integer>(2));
+        node.getNext().setNext(new Node<Integer>(3));
+        node.getNext().getNext().setNext(new Node<Integer>(6));
+
+        return node;
+    }
 }
