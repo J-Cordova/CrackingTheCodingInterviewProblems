@@ -13,7 +13,7 @@ public class RemoveDupsFromLinkedList_Tests
     @Test
     public void GivenListWithDuplicates_RemoveDupsFromLinkedList_ReturnUniqueLinkedList()
     {
-        Node<String> list = getTestLinkedList();
+        Node<String> list = TestListGenerator.getTestLinkedList();
         RemoveDupsFromLinkedList remover = new RemoveDupsFromLinkedList();
 
         list = remover.RemoveDuplicates(list);
@@ -41,7 +41,7 @@ public class RemoveDupsFromLinkedList_Tests
     @Test
     public void GivenListWithDuplicates_RemoveDupsFromLinkedListConstantSpace_ReturnUniqueLinkedList()
     {
-        Node<String> list = getTestLinkedList();
+        Node<String> list = TestListGenerator.getTestLinkedList();
         RemoveDupsFromLinkedList remover = new RemoveDupsFromLinkedList();
 
         list = remover.RemoveDuplicatesWithConstantSpace(list);
@@ -66,14 +66,5 @@ public class RemoveDupsFromLinkedList_Tests
         Assert.assertTrue(result);
     }
 
-    private Node<String> getTestLinkedList()
-    {
-        Node<String> node = new Node<>("a");
 
-        node.setNext(new Node<String>("b"));
-        node.getNext().setNext(new Node<String>("c"));
-        node.getNext().getNext().setNext(new Node<>("b"));
-
-        return node;
-    }
 }
