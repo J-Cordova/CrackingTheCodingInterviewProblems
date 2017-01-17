@@ -26,4 +26,26 @@ public class TestListGenerator
 
         return node;
     }
+
+    public static Node<String> getTestStringIntegerList()
+    {
+        Node<String> node = new Node<>("2");
+
+        node.setNext(new Node<String>("2"));
+        node.getNext().setNext(new Node<String>("2"));
+        node.getNext().getNext().setNext(new Node<>("2"));
+
+        return node;
+    }
+
+    public static Node<String> getTestStringIntegerList2()
+    {
+        Node<String> node = new Node<>("4");
+
+        node.setNext(new Node<String>("4"));
+        node.getNext().setNext(new Node<String>("4"));
+        node.getNext().getNext().setNext(new Node<>("4"));
+
+        return node;
+    }
 }
