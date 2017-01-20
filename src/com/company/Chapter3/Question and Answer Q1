@@ -1,0 +1,9 @@
+
+
+How would you Implement 3 stacks with 1 array
+
+-- I would define the max length of the stacks as some number x
+-- I would make an array of size 3x
+
+-- Each Stack would keep track of it's max length ie x, and would keep track of its respective starting index in the array
+-- By doing this we can ensure that each stack stays with in it's own bounds and we can have 3 stacks operating within the same data structure
